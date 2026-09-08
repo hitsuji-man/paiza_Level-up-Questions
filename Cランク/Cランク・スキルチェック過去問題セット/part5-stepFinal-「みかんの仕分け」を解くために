@@ -1,0 +1,33 @@
+<?php
+    // 自分の得意な言語で
+    // Let's チャレンジ！！
+    [$N, $M] = explode(" ", trim(fgets(STDIN)));
+    $box = [];
+    $validBoxes = [];
+    $MAX = 1100;
+    for ($i = $N; $i <= $MAX; $i+=$N) {
+        $validBoxes[] = $i;
+    }
+    // print_r($validBoxes);
+    
+    // みかんを1個ずつ読み込み、全ての箱との重さの差を調べ、最も近い箱を選ぶ
+    for ($i = 0; $i < $M; $i++) {
+        $weight = trim(fgets(STDIN));
+        
+        // 初期値を入れておく
+        $answer = $validBoxes[0];
+        $minDistance = abs($weight - $answer);
+        
+        
+        foreach ($validBoxes as $box) {
+            $distance = abs($weight - $box);
+            
+            // 現在の箱の重さの差がこれまでの最小の重さの差より小さいか or 重さの差が同じ場合、より重い箱を選ぶ
+            if ($distance < $minDistance || ($distance == $minDistance && $box > $answer)) {
+                $answer = $box;
+                $minDistance = $distance;
+            }
+        }
+        echo "$answer\n";
+    }  
+?>
