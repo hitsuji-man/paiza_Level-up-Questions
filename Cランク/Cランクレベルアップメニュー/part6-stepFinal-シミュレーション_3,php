@@ -1,0 +1,35 @@
+<?php
+    // 自分の得意な言語で
+    // Let's チャレンジ！！
+    // 1 1 2 3
+    $H = trim(fgets(STDIN));
+    $paizaDamage = $monsterDamage = 0;
+    $paizaPrev1 = $paizaPrev2 = $monsterPrev1 = $monsterPrev2 = 1;
+    
+    // モンスターの1回目と2回目の攻撃
+    $H -= 2;
+    $n = 2;
+    while ($H > 0) {
+        // パイザ君の魔法: 3 回目以降の n 回目には、(モンスターから受けた (n - 1) 回目の攻撃のダメージ) + (モンスターから受けた (n - 2) 回目の攻撃のダメージ) のダメージを与えます。
+        $paizaDamage = $monsterPrev1 + $monsterPrev2;
+        // モンスターの魔法: 3 回目以降の n 回目には、 (パイザ君から受けた (n - 1) 回目の攻撃のダメージ) * 2 + (パイザ君から受けた (n - 2) 回目の攻撃のダメージ) のダメージを与えます。
+        $monsterDamage = $paizaPrev1 * 2 + $paizaPrev2;
+        
+        $H -= $monsterDamage;
+        $n++;
+
+        /**
+         * 攻撃回数ごとのダメージ表
+         * 攻撃回数n    1 2 3 4 5
+         * パイザの攻撃  1 1 2 4 8 
+         * モンスター.   1 1 3 5 10
+         */
+        $monsterPrev2 = $monsterPrev1;
+        $monsterPrev1 = $monsterDamage;
+
+        $paizaPrev2 = $paizaPrev1;
+        $paizaPrev1 = $paizaDamage;
+        // echo "攻撃回数 $n, パイザの攻撃 $paizaDamage, モンスター $monsterDamage\n";   
+    }
+    echo "$n\n";
+?>
