@@ -20,7 +20,7 @@
         $job[$i] = $name;
         $key++;
     }
-    $number_M = $M - 1;
-    echo "$job[$number_M]\n";
+    $index_M = $M - 1;
+    echo "$job[$index_M]\n";
     // print_r($job);
 ?>
