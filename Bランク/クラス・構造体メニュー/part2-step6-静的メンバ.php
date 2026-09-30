@@ -6,7 +6,7 @@ class Customer3
     protected $total = 0;
 
     // お客さん(クラス)全体で共有する情報
-    protected static $countedNumber = 0;   // 会計した人数
+    protected static $accountedNumber = 0;   // 会計した人数
 
     // デフォルト引数を指定
     public function order($type, $price = 500)
@@ -18,7 +18,7 @@ class Customer3
 
         if ($type === "A") {
             // 会計をして退店する
-            self::$countedNumber += 1;
+            self::$accountedNumber += 1;
             return;
         }
 
@@ -31,9 +31,9 @@ class Customer3
     }
 
     // 会計して退店した人数を取得
-    public static function getCountedNumber()
+    public static function getAccountedNumber()
     {
-        return self::$countedNumber;
+        return self::$accountedNumber;
     }
 }
 
@@ -94,5 +94,5 @@ for ($i = 0; $i < $K; $i++) {
 }
 
 // 最後にお客さん全体で退店した人数を出力する
-echo Customer3::getCountedNumber() . "\n";
+echo Customer3::getAccountedNumber() . "\n";
 ?>
