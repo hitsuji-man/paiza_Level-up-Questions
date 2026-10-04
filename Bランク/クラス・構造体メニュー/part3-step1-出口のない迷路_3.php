@@ -7,7 +7,6 @@ class Point
     public function __construct(string $letter, int $road1, int $road2)
     {
         $this->letter = $letter;
-        // 1か2を受け取り、次の地点を示す
         $this->roads = [
             1 => $road1,
             2 => $road2,
