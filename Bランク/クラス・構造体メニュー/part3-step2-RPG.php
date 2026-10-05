@@ -21,7 +21,7 @@ class Yuusha
         $this->f = $f;  // 運
     }
 
-    public function LevelUp(int $h, int $a, int $d, int $s, int $c, int $f): void
+    public function levelUp(int $h, int $a, int $d, int $s, int $c, int $f): void
     {
         $this->l += 1;
         $this->h += $h;
@@ -105,7 +105,7 @@ for ($i = 1; $i <= $N; $i++) {
 for ($i = 1; $i <= $K; $i++) { 
     $line = explode(" ", trim(fgets(STDIN)));
     if ($line[1] === "levelup") {
-        $yuusha[$line[0]]->LevelUp($line[2], $line[3], $line[4], $line[5], $line[6], $line[7]);
+        $yuusha[$line[0]]->levelUp($line[2], $line[3], $line[4], $line[5], $line[6], $line[7]);
     } elseif ($line[1] === "muscle_training") {
         $yuusha[$line[0]]->muscleTraining($line[2], $line[3]);
     } elseif ($line[1] === "running") {
