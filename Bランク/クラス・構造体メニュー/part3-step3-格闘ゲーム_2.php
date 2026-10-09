@@ -4,7 +4,8 @@ class Player2
     private int $hp;
     private array $techniques;
     private bool $isFinished = false;
-    // 静的メンバ:クラス全体で共有する残り人数(各インスタンスごとではない)
+    // 静的メンバ:クラス全体で共有する残り人数
+    // (各インスタンスごとではない)
     public static int $remainingCount = 0;
 
     public function __construct(int $hp, int $F1, int $A1, int $F2, int $A2, int $F3, int $A3)
