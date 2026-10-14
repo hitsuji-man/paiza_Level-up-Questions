@@ -5,7 +5,7 @@ class Customer3
     // お客さん(各インスタンス)ごとに持つ情報
     protected $total = 0;
 
-    // お客さん(クラス)全体で共有する情報:静的メンバ
+    // お客さん(クラス)全体で共有する情報:(静的メンバ)
     protected static $accountedNumber = 0;   // 会計した人数
 
     // デフォルト引数を指定
