@@ -10,7 +10,8 @@
         [$name, $orderNum, $amount] = explode(" ", trim(fgets(STDIN)));
         $departments[$name][] = [$orderNum, (int) $amount];
     }
-    
+    // print_r($departments);
+
     foreach ($departments as $keyString => $arrays) {
         echo $keyString . "\n";
         foreach (array_slice($arrays, 1) as $array) {
