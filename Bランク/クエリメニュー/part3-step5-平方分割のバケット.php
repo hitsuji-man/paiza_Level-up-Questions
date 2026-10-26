@@ -3,7 +3,7 @@
     for ($i = 1; $i <= 10000; $i++) { 
         $A[$i] = (int) trim(fgets(STDIN));
     }
-    
+    // 平方分割
     // 100要素ずつに分割(元のキーを保持する)
     $chunks = array_chunk($A, 100, true);
     
