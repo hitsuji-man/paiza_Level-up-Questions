@@ -33,11 +33,11 @@
             }
 
             for ($i = 0; $i < 52; $i++) {
-                $index = intdiv($i, 2); 
+                $index = intdiv($i, 2);     // 添え字:0~25の範囲(0,0,1,1,...),intdiv:0方向に切り捨て
                 if ($i % 2 == 0) {
-                    $deck[$i] = $upperSide[$index];
+                    $deck[$i] = $upperSide[$index]; // 上半分の0番(i=0),
                 } else {
-                    $deck[$i] = $lowerSide[$index];
+                    $deck[$i] = $lowerSide[$index]; // 下半分の0番(i=1)
                 }
             }
         }
