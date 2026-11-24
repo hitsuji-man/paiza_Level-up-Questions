@@ -16,7 +16,9 @@ for ($i = 0; $i < $N; $i++) {
 
     if ($status === 'ok') {
         $test[$class]['countOK']++;
+        // カウントが2 かつ 文字が辞書順で小さいとき
         if ($test[$class]['countOK'] === 2 && $class[1] < $best) {
+            // 文字(テスト結果)を更新する
             $best = $class[1];
         }
     } else {
