@@ -1,0 +1,11 @@
+10
+TC ng
+TA ok
+TA ng
+TA ng
+TB ok
+TC ng
+TC ok
+TA ok
+TB ok
+TA ng
